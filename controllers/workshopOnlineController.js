@@ -26,10 +26,10 @@ module.exports = {
 
         const videoPath = courses_video
           ? path + "/" + courses_video[0].filename
-          : "/defaultPhoto/defaultUser.png";
+          : "";
         const imagePath = image_video
           ? path + "/" + image_video[0].filename
-          : "/defaultPhoto/defaultUser.png";
+          : "";
 
         const { title, slug } = JSON.parse(req.body.data);
 
