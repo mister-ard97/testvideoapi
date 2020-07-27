@@ -1,7 +1,8 @@
-const { workshopOnline } = require("../models");
+const { workshopOnline, sequelize, Sequelize } = require("../models");
 const { uploader } = require("../helpers/uploader");
 const { URL_API } = require("../helpers/api_url");
 const FormData = require("form-data");
+const axios = require("axios");
 // const {
 //     createJWTToken,
 //     createForgotPasswordToken,
@@ -49,6 +50,9 @@ module.exports = {
             "Content-Length": formData.getLengthSync(),
           },
         };
+
+        console.log(options);
+        console.log("Jalan sampe sini 1");
 
         axios
           .post(`https://api.sproutvideo.com/v1/videos`, formData, options)
