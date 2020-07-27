@@ -8,20 +8,20 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const bearerToken = require("express-bearer-token");
 const fs = require("fs");
-const multipart = require("connect-multiparty");
 
+app.use(cors());
+app.use(bodyParser.json({ limit: "90mb" }));
 app.use(
-  multipart({
-    maxFieldsSize: "900MB",
+  bodyParser.urlencoded({
+    limit: "900mb",
+    extended: true,
+    parameterLimit: 900000,
   })
 );
 
-app.use(bodyParser.json());
-app.use(cors());
-
 app.io = io;
 
-app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("public"));
 
 app.use(bearerToken());
