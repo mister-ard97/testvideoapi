@@ -119,6 +119,7 @@ module.exports = {
           // kita gunakan nama video yang di server menjadi title di video pada hostingan.
 
           fs.unlinkSync(`./public/${path}/${titleVideo}`);
+          console.log("Lewatin Fs unlink");
 
           return res
             .status(200)
