@@ -1,4 +1,5 @@
 "use strict";
+// Ko Billy, untuk tipe data duration aturan INTEGER biar ga ada komanya. Saya lupa update. wkwkwkw
 module.exports = (sequelize, DataTypes) => {
   const workshopOnline = sequelize.define(
     "workshopOnline",
