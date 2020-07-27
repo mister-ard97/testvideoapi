@@ -14,7 +14,7 @@ app.use(cors());
 
 app.io = io;
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false, limit: "900mb" }));
 app.use(express.static("public"));
 
 app.use(bearerToken());
