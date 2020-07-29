@@ -9,19 +9,19 @@ const cors = require("cors");
 const bearerToken = require("express-bearer-token");
 const fs = require("fs");
 
-app.use(bodyParser.json({ limit: "900mb" }));
+// app.use(bodyParser.json({ limit: "900mb" }));
 app.use(cors());
-app.use(
-  bodyParser.urlencoded({
-    limit: "900mb",
-    extended: true,
-    parameterLimit: 900000,
-  })
-);
+// app.use(
+//   bodyParser.urlencoded({
+//     limit: "900mb",
+//     extended: true,
+//     parameterLimit: 900000,
+//   })
+// );
 
 app.io = io;
 
-// app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("public"));
 
 app.use(bearerToken());
