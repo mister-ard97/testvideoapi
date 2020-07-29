@@ -9,8 +9,8 @@ const cors = require("cors");
 const bearerToken = require("express-bearer-token");
 const fs = require("fs");
 
+app.use(bodyParser.json({ limit: "900mb" }));
 app.use(cors());
-app.use(bodyParser.json({ limit: "90mb" }));
 app.use(
   bodyParser.urlencoded({
     limit: "900mb",
